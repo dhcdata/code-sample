@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{fragments/layout}"
+>
+  <head>
+    <title>Transactions</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+  <body>
+    <div layout:fragment="content">
+      <form>
+        <div class="form-group form-inline">
+          <label for="exampleInputEmail1">First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="firstName"
+            placeholder="Enter First Name"
+          />
+        </div>
+        <div class="form-group form-inline">
+          <label for="exampleInputPassword1">Last Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="lastName"
+            placeholder="Enter Last Name"
+          />
+        </div>
+        <div class="form-group form-inline">
+          <label for="exampleInputEmail1">User Name</label>
+          <input
+            type="text"
+            name="userId"
+            class="form-control"
+            placeholder="Enter User Id"
+          />
+        </div>
+        <div class="form-group form-inline">
+          <label for="exampleInputPassword1">Password</label>
+          <input
+            type="password"
+            name="password"
+            class="form-control"
+            placeholder="Password"
+          />
+        </div>
+        <div class="form-group form-inline">
+          <label for="exampleInputPassword1">Initial Balance</label>
+          <input
+            type="text"
+            class="form-control"
+            name="amount"
+            placeholder="Initial Balance"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

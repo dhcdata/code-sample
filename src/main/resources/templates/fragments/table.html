@@ -1,0 +1,32 @@
+<html>
+  <head> </head>
+  <body>
+    <div th:fragment="transactions-table">
+      <table class="table">
+        <tr>
+          <th>Account ID</th>
+          <th>Txn ID</th>
+          <th>Date</th>
+          <th>Type</th>
+          <th>Amount</th>
+          <th>Previous Balance</th>
+          <th>Ending Balance</th>
+        </tr>
+
+        <tr
+          th:if="${transactions != null}"
+          th:each="i : ${#numbers.sequence(transactions.size() - 1, 0, -1)}"
+          th:with="txn=${transactions[i]}"
+        >
+          <td th:text="${txn.account.id}"></td>
+          <td th:text="${txn.id}"></td>
+          <td th:text="${txn.transaction.date}"></td>
+          <td th:text="${txn.transaction.type}"></td>
+          <td th:text="${txn.transaction.amount}"></td>
+          <td th:text="${txn.previousBalance}"></td>
+          <td th:text="${txn.postBalance}"></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

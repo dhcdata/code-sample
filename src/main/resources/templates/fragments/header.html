@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <body>
+    <th:block th:fragment="header">
+      <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" th:href="@{/}">
+              <img
+                style="width:75px; background-color:#5bc0de"
+                th:src="@{/img/political-tools.svg}"
+                alt="logo"
+              />
+            </a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="" th:if="${account == null || !account.isPresent()}">
+                <a th:href="@{/createAccount}">Create Account</a>
+              </li>
+              <li class="" th:if="${account != null && account.isPresent()}">
+                <a th:href="@{/showTransactions}">Transactions</a>
+              </li>
+              <li th:if="${user != null }">
+                <a th:href="@{/logout}">Sign Out</a>
+              </li>
+              <li th:if="${user == null }">
+                <a th:href="@{/login}">Sign In</a>
+              </li>
+            </ul>
+            <ul
+              class="nav navbar-nav navbar-right"
+              th:if="${account != null && user != null && account.isPresent()}"
+            >
+              <li>
+                <button type="button" class="btn btn-primary ">
+                  Balance:
+
+                  <span
+                    class="badge badge-secondary "
+                    th:text="${account.get().balance}"
+                  ></span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </th:block>
+  </body>
+</html>

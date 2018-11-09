@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <div th:fragment="deposit-form">
+      <form th:action="@{/deposit}" method="post" class="form-inline">
+        <div class="form-group col-md-12">
+          <input
+            type="text"
+            id="deposit-amount"
+            name="amount"
+            class="form-control"
+            placeholder="$100.00"
+          />
+          <input
+            type="submit"
+            name="deposit-submit"
+            id="deposit-submit"
+            class="form-control btn btn-info"
+            value="Deposit"
+          />
+        </div>
+      </form>
+    </div>
+
+    <div th:fragment="withdraw-form">
+      <form th:action="@{/withdraw}" method="post" class="form-inline">
+        <div class="form-group col-md-12">
+          <input
+            type="text"
+            id="deposit-amount"
+            name="amount"
+            class="form-control  col-sm-"
+            placeholder="$100.00"
+          />
+          <input
+            type="submit"
+            name="withdraw-submit"
+            id="withdraw-submit"
+            class="form-control btn btn-info"
+            value="Withdraw"
+          />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
